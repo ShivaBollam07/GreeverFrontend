@@ -1,0 +1,52 @@
+.MainDiv {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    background: linear-gradient(to right, #242F49, #FFA586);
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.Navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 0;
+    width: 100%;
+    margin: 0 auto;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.CompanyLogo {
+    width: 70px;
+    height: 70px;
+    cursor: pointer;
+}
+
+.NavLinks {
+    display: flex;
+    list-style-type: none;
+    gap: 60px;
+    margin: 0;
+    padding: 0;
+
+}
+
+.NavLinks li {
+    cursor: pointer;
+    color: #0d1015;
+    transition: 0.3s;
+    font-size: 1.4rem;
+    font-weight: 800;
+}
+
+.ProfileIcon {
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+
+}
+
