@@ -36,6 +36,20 @@ function Reads() {
             reading_list_skills: "JavaScript, JS, JS Libraries, JS Components",
             reading_list_image: "https://th.bing.com/th/id/OIP.jK2sOzGg1b1xW6-1iRUg1wHaE8?rs=1&pid=ImgDetMain",
             no_of_items: 25
+        },
+        {
+            reading_list_title: "HTML",
+            reading_list_description: "Learning HTML is HTML",
+            reading_list_skills: "HTML, HTML5, HTML Components",
+            reading_list_image: "https://th.bing.com/th/id/OIP.4Hg2c2z1gZ8bq9VJLJz3LQHaEo?rs=1&pid=ImgDetMain",
+            no_of_items: 30
+        },
+        {
+            reading_list_title: "CSS",
+            reading_list_description: "Learning CSS is CSS",
+            reading_list_skills: "CSS, CSS3, CSS Components",
+            reading_list_image: "https://th.bing.com/th/id/OIP.9WZPLb2B4rKSbK52Zg8hnAHaEo?rs=1&pid=ImgDetMain",
+            no_of_items: 35
         }
     ];
 

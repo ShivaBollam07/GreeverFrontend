@@ -36,6 +36,20 @@ function Courses() {
             duration: "9 hrs",
             videos: 14,
             image: "https://media.geeksforgeeks.org/wp-content/uploads/20230627113746/DSA-full-form.png"
+        },
+        {
+            title: "Introduction to Cybersecurity",
+            description: "Discover the world of cybersecurity and its importance",
+            duration: "5 hrs",
+            videos: 8,
+            image: "https://th.bing.com/th/id/OIP.0gj8Yw7r9Ym5b0h2z9fZ6gHaE8?w=250&h=180&c=7&r=0&o=5&pid=1.7"
+        },
+        {
+            title: "Android App Development",
+            description: "Create your own Android apps using Java and Android Studio",
+            duration: "11 hrs",
+            videos: 16,
+            image: "https://th.bing.com/th/id/OIP.3gj3X5Oo5J2s4tRyQ8bV6wHaE8?w=250&h=180&c=7&r=0&o=5&pid=1.7"
         }
     ];
 

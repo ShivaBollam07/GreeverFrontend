@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import CompanyLogo from '../assets/Greever-logo.png';
 import ProfileIcon from '../assets/profile-logo.png';
 import './Styles/Navbar.css';
+import Button from 'react-bootstrap/Button';
+import Modal from 'react-bootstrap/Modal';
 
 // eslint-disable-next-line react/prop-types
 function Navbar({ username }) {
@@ -10,6 +12,10 @@ function Navbar({ username }) {
   const [name, setName] = useState('');
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -31,7 +37,7 @@ function Navbar({ username }) {
         }
 
         const data = await response.json();
-        
+
         if (data.status === 'success' && data.name) {
           setName(data.name);
         } else {
@@ -64,12 +70,38 @@ function Navbar({ username }) {
             <li><Link to="/about" onClick={toggleMenu}>About Us</Link></li>
           </ul>
           <div className="ProfileSection">
-            <img src={ProfileIcon} alt="Profile Logo" className="ProfileIcon" />
+            <img src={ProfileIcon} alt="Profile Logo" className="ProfileIcon" onClick={handleShow} />
             <span className="Username">
               {displayName.length > 10 ? `${displayName.slice(0, 10)}...` : displayName}
             </span>
           </div>
         </div>
+        
+        <Modal show={show} onHide={handleClose} centered className="ProfileModal">
+          <Modal.Header closeButton>
+            <Modal.Title>Profile Details</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <div className="ProfileDetails">
+              <img src={ProfileIcon} alt="Profile" className="ModalProfileIcon" />
+              <h3 className="ModalProfileName">{displayName}</h3>
+              <p className="ModalProfileEmail">Email: example@example.com</p>
+              <p className="ModalProfileRole">Role: Student</p>
+              <div className="ModalProfileButtons">
+                <Button variant="primary" onClick={handleClose} className="ProfileButton">
+                  My Profile
+                </Button>
+                <Button variant="secondary" onClick={handleClose} className="ProfileButton">
+                  Settings
+                </Button>
+                <Button variant="danger" onClick={handleClose} className="ProfileButton">
+                  Logout
+                </Button>
+              </div>
+            </div>
+          </Modal.Body>
+        </Modal>
+
         <div className="BurgerMenu" onClick={toggleMenu}>
           <div className={`BurgerBar ${isMenuOpen ? 'open' : ''}`}></div>
           <div className={`BurgerBar ${isMenuOpen ? 'open' : ''}`}></div>

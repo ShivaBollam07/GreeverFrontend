@@ -134,3 +134,46 @@
     transform: rotate(45deg) translate(-5px, -6px);
   }
 }
+
+.ProfileModal .modal-content {
+  border-radius: 15px;
+  background-color: #f7f7f7;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.ProfileDetails {
+  text-align: center;
+  padding: 20px;
+}
+
+.ModalProfileIcon {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-bottom: 15px;
+}
+
+.ModalProfileName {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.ModalProfileEmail,
+.ModalProfileRole {
+  font-size: 1em;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.ModalProfileButtons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.ProfileButton {
+  width: 100%;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
