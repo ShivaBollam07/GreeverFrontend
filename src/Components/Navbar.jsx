@@ -1,22 +1,80 @@
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import CompanyLogo from '../assets/Greever-logo.png';
 import ProfileIcon from '../assets/profile-logo.png';
 import './Styles/Navbar.css';
 
-function Navbar() {
+// eslint-disable-next-line react/prop-types
+function Navbar({ username }) {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [name, setName] = useState('');
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
+  useEffect(() => {
+    const fetchName = async () => {
+      try {
+        const response = await fetch('http://localhost:3000/app/v1/auth/getname', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ token: username }),
+        });
+
+        if (!response.ok) {
+          throw new Error('Failed to fetch name');
+        }
+
+        const data = await response.json();
+        
+        if (data.status === 'success' && data.name) {
+          setName(data.name);
+        } else {
+          throw new Error('Name not found in response');
+        }
+      } catch (err) {
+        console.error('Error fetching name:', err);
+        setError('Failed to load name');
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    fetchName();
+  }, [username]);
+
+  const displayName = isLoading ? 'Loading...' : error ? 'User' : name;
+
   return (
     <div className='MainDiv'>
       <nav className="Navbar">
-      <Link to="/home"> 
-        <img src={CompanyLogo} alt="GreeverLogo" className="CompanyLogo" />
+        <Link to="/home">
+          <img src={CompanyLogo} alt="GreeverLogo" className="CompanyLogo" />
         </Link>
-        <ul className="NavLinks">
-          <li><Link to="/home">Home</Link></li>
-          <li><Link to="/courses">Courses</Link></li>
-          <li><Link to="/reads">Reads</Link></li>
-          <li><Link to="/about">About Us</Link></li>
-        </ul>
-        <img src={ProfileIcon} alt="Profile Logo" className="ProfileIcon" />
+        <div className={`NavLinksContainer ${isMenuOpen ? 'active' : ''}`}>
+          <ul className="NavLinks">
+            <li><Link to="/home" onClick={toggleMenu}>Home</Link></li>
+            <li><Link to="/courses" onClick={toggleMenu}>Courses</Link></li>
+            <li><Link to="/reads" onClick={toggleMenu}>Reads</Link></li>
+            <li><Link to="/about" onClick={toggleMenu}>About Us</Link></li>
+          </ul>
+          <div className="ProfileSection">
+            <img src={ProfileIcon} alt="Profile Logo" className="ProfileIcon" />
+            <span className="Username">
+              {displayName.length > 10 ? `${displayName.slice(0, 10)}...` : displayName}
+            </span>
+          </div>
+        </div>
+        <div className="BurgerMenu" onClick={toggleMenu}>
+          <div className={`BurgerBar ${isMenuOpen ? 'open' : ''}`}></div>
+          <div className={`BurgerBar ${isMenuOpen ? 'open' : ''}`}></div>
+          <div className={`BurgerBar ${isMenuOpen ? 'open' : ''}`}></div>
+        </div>
       </nav>
     </div>
   );

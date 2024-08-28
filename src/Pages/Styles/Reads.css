@@ -92,3 +92,9 @@ body {
     font-weight: bold;
     color: var(--accent-color);
 }
+
+.ReadsDescription{
+    font-size: 1rem;
+    color: white;
+    margin: 5px 0;
+}

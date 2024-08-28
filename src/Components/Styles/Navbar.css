@@ -1,61 +1,136 @@
 .MainDiv {
-    display: flex;
-    justify-content: center;
-    width: 100%;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  background: linear-gradient(to right, #242F49, #FFA586);
+  color: white;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.Navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 20px;
+  width: 100%;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.CompanyLogo {
+  width: 70px;
+  height: 70px;
+  cursor: pointer;
+}
+
+.NavLinksContainer {
+  display: flex;
+  align-items: center;
+}
+
+.NavLinks {
+  display: flex;
+  list-style-type: none;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+}
+
+.NavLinks li {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.NavLinks a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.NavLinks a:hover {
+  color: #FFA586;
+}
+
+.ProfileIcon {
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  padding-left: 20px;
+}
+
+.ProfileSection {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.Username {
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.BurgerMenu {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.BurgerBar {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 3px 0;
+  transition: 0.4s;
+}
+
+@media screen and (max-width: 768px) {
+  .NavLinksContainer {
+    position: absolute;
+    top: 80px;
+    left: -100%;
+    flex-direction: column;
     background: linear-gradient(to right, #242F49, #FFA586);
-    color: white;
-    font-family: 'Roboto', sans-serif;
-    font-size: 1.2rem;
-    font-weight: 500;
-  }
-  
-  .Navbar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 15px 20px;
     width: 100%;
-    max-width: 1200px; 
-    margin: 0 auto;
+    transition: 0.3s;
+    box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
   }
-  
-  .CompanyLogo {
-    width: 70px;
-    height: 70px;
-    cursor: pointer;
+
+  .NavLinksContainer.active {
+    left: 0;
   }
-  
+
   .NavLinks {
-    display: flex;
-    list-style-type: none;
-    gap: 30px;
-    margin: 0;
-    padding: 0;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
   }
-  
+
   .NavLinks li {
-    font-size: 1.2rem; 
-    font-weight: 600;
+    margin-bottom: 20px;
   }
-  
-  .NavLinks a {
-    color: white; 
-    text-decoration: none;
-    transition: color 0.3s ease; 
+
+  .ProfileSection {
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
   }
-  
-  .NavLinks a:hover {
-    color: #FFA586; 
+
+  .BurgerMenu {
+    display: flex;
   }
-  
-  .ProfileIcon {
-    width: 50px;
-    height: 50px;
-    cursor: pointer;
-    transition: transform 0.3s ease; 
+
+  .BurgerBar.open:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
   }
-  
-  .ProfileIcon:hover {
-    transform: scale(1.1); 
+
+  .BurgerBar.open:nth-child(2) {
+    opacity: 0;
   }
-  
+
+  .BurgerBar.open:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+  }
+}

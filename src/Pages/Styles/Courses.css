@@ -87,6 +87,11 @@ body {
     color: var(--secondary-text);
     margin: 5px 0;
 }
+.CoursesDescription{
+    font-size: 1rem;
+    color: white;
+    margin: 5px 0;
+}
 
 .CourseCard p span {
     font-weight: bold;
