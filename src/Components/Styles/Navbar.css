@@ -13,9 +13,9 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 15px 20px; /* Adjusted padding for a more compact design */
+    padding: 15px 20px;
     width: 100%;
-    max-width: 1200px; /* Limit width to center the navbar */
+    max-width: 1200px; 
     margin: 0 auto;
   }
   
@@ -28,34 +28,34 @@
   .NavLinks {
     display: flex;
     list-style-type: none;
-    gap: 30px; /* Reduced gap for better spacing */
+    gap: 30px;
     margin: 0;
     padding: 0;
   }
   
   .NavLinks li {
-    font-size: 1.2rem; /* Slightly smaller font size for modern look */
-    font-weight: 600; /* Reduced font weight for a sleeker appearance */
+    font-size: 1.2rem; 
+    font-weight: 600;
   }
   
   .NavLinks a {
-    color: white; /* Set text color to white */
-    text-decoration: none; /* Remove underline from links */
-    transition: color 0.3s ease; /* Smooth transition for color change */
+    color: white; 
+    text-decoration: none;
+    transition: color 0.3s ease; 
   }
   
   .NavLinks a:hover {
-    color: #FFA586; /* Change text color on hover */
+    color: #FFA586; 
   }
   
   .ProfileIcon {
     width: 50px;
     height: 50px;
     cursor: pointer;
-    transition: transform 0.3s ease; /* Smooth transition for hover effect */
+    transition: transform 0.3s ease; 
   }
   
   .ProfileIcon:hover {
-    transform: scale(1.1); /* Slightly enlarge the icon on hover */
+    transform: scale(1.1); 
   }
   
