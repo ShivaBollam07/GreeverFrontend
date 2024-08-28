@@ -1,7 +1,7 @@
 :root {
     --primary-bg: #f0f4f8;
     --card-bg: #ffffff;
-    --primary-text: #2c3e50;
+    --primary-text: white;
     --secondary-text: #34495e;
     --accent-color: #3498db;
     --hover-color: #2980b9;
@@ -12,12 +12,12 @@ body {
     background-color: var(--primary-bg);
 }
 
-.MainDiv1 {
+.MainDiv2 {
     padding: 20px;
     padding-left: 50px;
 }
 
-.CoursesHeader {
+.ReadsHeader {
     font-size: 2.5rem;
     font-weight: 800;
     color: var(--primary-text);
@@ -25,7 +25,7 @@ body {
     margin-bottom: 20px;
 }
 
-.CoursesContainer {
+.ReadsContainer {
     display: flex;
     overflow-x: auto;
     overflow-y: hidden;
@@ -35,22 +35,22 @@ body {
     scroll-padding-left: 20px;
 }
 
-.CoursesContainer::-webkit-scrollbar {
+.ReadsContainer::-webkit-scrollbar {
     height: 8px;
-    display: none;  
+    display: none;
 }
 
-.CoursesContainer::-webkit-scrollbar-track {
+.ReadsContainer::-webkit-scrollbar-track {
     background: #e0e0e0;
     border-radius: 10px;
 }
 
-.CoursesContainer::-webkit-scrollbar-thumb {
+.ReadsContainer::-webkit-scrollbar-thumb {
     background: var(--accent-color);
     border-radius: 10px;
 }
 
-.CourseCard {
+.ReadCard {
     flex: 0 0 auto;
     width: 300px;
     min-height: 350px;
@@ -59,15 +59,15 @@ body {
     padding: 20px;
     text-align: center;
     transition: all 0.3s ease;
-    background-color: white
+    background-color: var(--card-bg);
 }
 
-.CourseCard:hover {
+.ReadCard:hover {
     transform: translateY(-10px);
     box-shadow: 0 10px 20px var(--shadow-color);
 }
 
-.CourseCard img {
+.ReadCard img {
     width: 100%;
     height: 150px;
     object-fit: cover;
@@ -75,20 +75,20 @@ body {
     margin-bottom: 15px;
 }
 
-.CourseCard h2 {
+.ReadCard h2 {
     font-size: 1.3rem;
     font-weight: bold;
+    color: black;
     margin-bottom: 10px;
-    color: black
 }
 
-.CourseCard p {
+.ReadCard p {
     font-size: 0.9rem;
     color: var(--secondary-text);
     margin: 5px 0;
 }
 
-.CourseCard p span {
+.ReadCard p span {
     font-weight: bold;
     color: var(--accent-color);
 }

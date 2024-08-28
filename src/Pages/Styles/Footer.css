@@ -1,0 +1,107 @@
+:root {
+    --footer-bg: #242f49;
+    --footer-text: #ffffff;
+    --footer-hover: #ffa586;
+  }
+  
+  .Footer {
+    background-color: var(--footer-bg);
+    color: var(--footer-text);
+    padding: 40px 20px;
+    text-align: center;
+  }
+  
+  .FooterContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .FooterLogo {
+    flex: 1;
+    min-width: 200px;
+    margin-bottom: 20px;
+  }
+  
+  .FooterLogo h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+  }
+  
+  .FooterLogo p {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #dddddd;
+  }
+  
+  .FooterLinks {
+    flex: 1;
+    min-width: 200px;
+    margin-bottom: 20px;
+  }
+  
+  .FooterLinks h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+  
+  .FooterLinks ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .FooterLinks li {
+    margin: 8px 0;
+  }
+  
+  .FooterLinks a {
+    color: var(--footer-text);
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .FooterLinks a:hover {
+    color: var(--footer-hover);
+  }
+  
+  .FooterSocial {
+    flex: 1;
+    min-width: 200px;
+    margin-bottom: 20px;
+  }
+  
+  .FooterSocial h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+  
+  .SocialIcons {
+    display: flex;
+    gap: 15px;
+  }
+  
+  .SocialIcons a {
+    display: inline-block;
+    transition: transform 0.3s ease;
+  }
+  
+  .SocialIcons a:hover {
+    transform: scale(1.1);
+  }
+  
+  .SocialIcons img {
+    width: 30px;
+    height: 30px;
+  }
+  
+  .FooterBottom {
+    border-top: 1px solid #555;
+    margin-top: 20px;
+    padding-top: 10px;
+    color: #aaaaaa;
+    font-size: 0.9rem;
+  }
+  

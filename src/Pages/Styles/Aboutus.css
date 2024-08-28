@@ -1,0 +1,59 @@
+.about-us {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    color: #fff;
+}
+
+.about-us h1 {
+    font-size: 2.5rem;
+    color: #FFA586;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.about-us h2 {
+    font-size: 1.8rem;
+    color: #FFA586;
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+.about-us p {
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.about-us ul, .about-us ol {
+    margin-left: 20px;
+    margin-bottom: 15px;
+}
+
+.about-us li {
+    margin-bottom: 10px;
+}
+
+.about-us section {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 30px;
+}
+
+.about-us .api-info {
+    background-color: rgba(255, 165, 134, 0.2);
+}
+
+@media (max-width: 600px) {
+    .about-us {
+        padding: 10px;
+    }
+    
+    .about-us h1 {
+        font-size: 2rem;
+    }
+    
+    .about-us h2 {
+        font-size: 1.5rem;
+    }
+}
