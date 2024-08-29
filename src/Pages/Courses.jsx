@@ -78,7 +78,9 @@ function Courses() {
             <div className="CoursesContainer">
                 {filteredCourses.length > 0 ? (
                     filteredCourses.map((course) => (
-                        <div className="CourseCard" key={course._id}>
+                        <div className="CourseCard" key={course._id}
+                        style={{ cursor: 'pointer' }}
+                        >
                             <img src={course.course_image} alt={course.course_title} />
                             <h2>{course.course_title}</h2>
                             <p>{course.course_description}</p>

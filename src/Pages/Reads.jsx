@@ -84,7 +84,10 @@ function Reads() {
             <div className="ReadsContainer">
                 {filteredReadingLists.length > 0 ? (
                     filteredReadingLists.map((list, index) => (
-                        <div className="ReadCard" key={index}>
+                        <div className="ReadCard" key={index}
+                        style={{ cursor: 'pointer' }}
+
+                        >
                             <img src={list.reading_list_image} alt={list.reading_list_title} />
                             <h2>{list.reading_list_title}</h2>
                             <p>{list.reading_list_description}</p>

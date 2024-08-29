@@ -22,20 +22,18 @@ body::before {
   z-index: -1;
 }
 
-/* Hide scrollbar for Chrome, Safari and Opera */
 body::-webkit-scrollbar {
   display: none;
 }
 
-/* Hide scrollbar for IE, Edge and Firefox */
 body {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none; 
+  scrollbar-width: none;
 }
 
 .content {
   min-height: 100vh;
-  padding-bottom: 50px; /* Adjust as needed */
+  padding-bottom: 50px; 
   box-sizing: border-box;
 }
 
