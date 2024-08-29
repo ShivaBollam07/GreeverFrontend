@@ -51,6 +51,14 @@
 
 .NavLinks a:hover {
   color: #FFA586;
+  text-decoration: none;  
+}
+
+.ProfileSection {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: relative;
 }
 
 .ProfileIcon {
@@ -60,16 +68,11 @@
   padding-left: 20px;
 }
 
-.ProfileSection {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
 .Username {
   color: white;
   font-size: 1.2rem;
   font-weight: 600;
+  cursor: pointer;
 }
 
 .BurgerMenu {
@@ -86,6 +89,40 @@
   transition: 0.4s;
 }
 
+/* New styles for the simple dropdown */
+.ModalDropdown {
+  position: absolute;
+  top: 60px;
+  right: 0;
+  background: linear-gradient(to right, #242F49, #FFA586);
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  width: 250px;
+  z-index: 1200;
+  overflow: hidden;
+
+}
+
+.ModalBody {
+  display: flex;
+  flex-direction: column;
+}
+
+.ModalBody button {
+  padding: 12px 16px;
+  border: none;
+  background-color: transparent;
+  color: white;
+  font-size: 1rem;
+  text-align: left;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.ModalBody button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
 @media screen and (max-width: 768px) {
   .NavLinksContainer {
     position: absolute;
@@ -96,6 +133,10 @@
     width: 100%;
     transition: 0.3s;
     box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+  }
+  .ModalDropdown {
+    width: 180px;
+    right: 20px;
   }
 
   .NavLinksContainer.active {
@@ -133,47 +174,4 @@
   .BurgerBar.open:nth-child(3) {
     transform: rotate(45deg) translate(-5px, -6px);
   }
-}
-
-.ProfileModal .modal-content {
-  border-radius: 15px;
-  background-color: #f7f7f7;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-}
-
-.ProfileDetails {
-  text-align: center;
-  padding: 20px;
-}
-
-.ModalProfileIcon {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  margin-bottom: 15px;
-}
-
-.ModalProfileName {
-  font-size: 1.5em;
-  font-weight: bold;
-  margin-bottom: 5px;
-}
-
-.ModalProfileEmail,
-.ModalProfileRole {
-  font-size: 1em;
-  color: #666;
-  margin-bottom: 10px;
-}
-
-.ModalProfileButtons {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 20px;
-}
-
-.ProfileButton {
-  width: 100%;
-  margin-bottom: 10px;
-  font-weight: bold;
 }

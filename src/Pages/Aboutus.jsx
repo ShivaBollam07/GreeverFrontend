@@ -80,9 +80,15 @@ function Aboutus() {
 
                 <p>All API endpoints require proper authentication using JWT tokens. For full API documentation, including request and response formats, please go through  <a 
                 href="https://documenter.getpostman.com/view/26166586/2sAXjGda8p"
-                    //new tab
                     target="_blank" rel="noreferrer" 
-                ><span>Greever API Documentation</span></a>
+                ><span
+                style={{color: "yellow" , 
+                textDecoration: "underline",
+                cursor: "pointer",
+                
+
+                }}
+                >Greever API Documentation</span></a>
                 .</p>
             </section>
             

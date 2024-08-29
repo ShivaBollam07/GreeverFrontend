@@ -10,6 +10,9 @@ import Home from './Pages/Home';
 import Footer from './Pages/Footer';
 import Login from './Pages/Login';
 import Signup from './Pages/SignUp';
+import Logout from './Pages/Logout';
+import Profile from './Pages/Profile';
+import Settings from './Pages/Settings';
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -62,6 +65,9 @@ function App() {
               <Route path="/courses" element={<Courses />} />
               <Route path="/reads" element={<Reads />} />
               <Route path="/about" element={<Aboutus />} />
+              <Route path="/profile" element={<Profile />} />
+              <Route path="/settings" element={<Settings />} />
+              <Route path="/logout" element={<Logout />} />
               <Route path="*" element={<Navigate to="/home" />} />
             </Routes>
           </div>
