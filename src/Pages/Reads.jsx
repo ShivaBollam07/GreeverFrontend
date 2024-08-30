@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import './Styles/Reads.css';
+import { useNavigate } from 'react-router-dom';
 
 function Reads() {
     const [readingLists, setReadingLists] = useState([]);
@@ -7,6 +8,7 @@ function Reads() {
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState(null);
     const [searchTerm, setSearchTerm] = useState('');
+    const navigate = useNavigate();
 
     useEffect(() => {
         const fetchReadingLists = async () => {
@@ -15,7 +17,7 @@ function Reads() {
             try {
                 const response = await fetch('http://localhost:3000/app/v1/reading_lists', {
                     headers: {
-                        'Authorization': `Bearer ${token}` // Use token from local storage
+                        'Authorization': `Bearer ${token}` 
                     }
                 });
 
@@ -86,9 +88,15 @@ function Reads() {
                     filteredReadingLists.map((list, index) => (
                         <div className="ReadCard" key={index}
                         style={{ cursor: 'pointer' }}
+                        onClick={() => {
+                            navigate(`/reads/${list._id}`);
+                        }}
 
                         >
                             <img src={list.reading_list_image} alt={list.reading_list_title} />
+                            <h2>
+                            {list._id}
+                            </h2>
                             <h2>{list.reading_list_title}</h2>
                             <p>{list.reading_list_description}</p>
                             <p>Skills: <span>{list.reading_list_skills}</span></p>

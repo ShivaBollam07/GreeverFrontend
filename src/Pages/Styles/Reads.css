@@ -37,7 +37,6 @@ body {
 
 .ReadsContainer::-webkit-scrollbar {
     height: 8px;
-    display: none;
 }
 
 .ReadsContainer::-webkit-scrollbar-track {

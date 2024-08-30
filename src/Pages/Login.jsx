@@ -5,6 +5,7 @@ import './Styles/Login.css';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
+// eslint-disable-next-line react/prop-types
 const Login = ({ onLogin }) => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -37,6 +38,7 @@ const Login = ({ onLogin }) => {
             } else {
                 setError('Invalid credentials. Please try again.');
             }
+        // eslint-disable-next-line no-unused-vars
         } catch (error) {
             setError('An error occurred. Please try again later.');
         }

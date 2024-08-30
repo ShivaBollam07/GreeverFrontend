@@ -14,6 +14,7 @@
   import Profile from './Pages/Profile';
   import Settings from './Pages/Settings';
   import CourseDetails from './Components/CourseDetails';
+  import ReadDetails from './Components/ReadDetails';
 
   function App() {
     const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -66,6 +67,7 @@
                 <Route path="/courses" element={<Courses />} />
                 <Route path="/courses/:id" element={<CourseDetails />} />
                 <Route path="/reads" element={<Reads />} />
+                <Route path="/reads/:id" element={<ReadDetails />} />
                 <Route path="/about" element={<Aboutus />} />
                 <Route path="/profile" element={<Profile />} />
                 <Route path="/settings" element={<Settings />} />

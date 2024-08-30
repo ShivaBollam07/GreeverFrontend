@@ -37,7 +37,6 @@ body {
 
 .CoursesContainer::-webkit-scrollbar {
     height: 8px;
-    display: none;  
 }
 
 .CoursesContainer::-webkit-scrollbar-track {
