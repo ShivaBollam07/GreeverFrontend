@@ -2,8 +2,9 @@ import  { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import CompanyLogo from '../assets/Greever-logo.png';
 import './Styles/Login.css';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
-// eslint-disable-next-line react/prop-types
 const Login = ({ onLogin }) => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -27,14 +28,15 @@ const Login = ({ onLogin }) => {
             const data = await response.json();
 
             if (data.status === 'success') {
+                toast.success('Login successful');
                 localStorage.setItem('token', data.token);
-                console.log('Login successful');
-                onLogin(); // Update authentication status
-                navigate('/home'); // Redirect to home page
+                onLogin(); 
+                setTimeout(() => {
+                    navigate('/home');
+                } , 3000);
             } else {
                 setError('Invalid credentials. Please try again.');
             }
-        // eslint-disable-next-line no-unused-vars
         } catch (error) {
             setError('An error occurred. Please try again later.');
         }
@@ -70,6 +72,7 @@ const Login = ({ onLogin }) => {
             <p>
                 Don&rsquo;t have an account? <Link to="/signup">Sign up</Link>
             </p>
+            <ToastContainer />
         </div>
     );
 };

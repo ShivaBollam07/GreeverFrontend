@@ -72,7 +72,6 @@ function Navbar({ username }) {
 
   const handleLogout = () => {
     localStorage.removeItem('token');
-    //reload page
     window.location.reload();
   };
 
@@ -84,9 +83,9 @@ function Navbar({ username }) {
   return (
     <div className='MainDiv'>
       <nav className="Navbar">
-        <Link to="/home" onClick={() => window.location.reload()}>
-          <img src={CompanyLogo} alt="GreeverLogo" className="CompanyLogo" />
-        </Link>
+          <img src={CompanyLogo} alt="GreeverLogo" className="CompanyLogo" 
+          onClick={() => navigate('/home')}
+          />
         <div className={`NavLinksContainer ${isMenuOpen ? 'active' : ''}`}>
           <ul className="NavLinks">
             <li><Link to="/home" onClick={toggleMenu}>Home</Link></li>
@@ -104,7 +103,7 @@ function Navbar({ username }) {
                 <div className="ModalBody">
                   <button onClick={() => handleNavigation('/profile')}>My Profile</button>
                   <button onClick={() => handleNavigation('/settings')}>Settings</button>
-                  <button onClick={handleLogout}>Logout</button> {/* Directly handle logout */}
+                  <button onClick={handleLogout}>Logout</button> 
                 </div>
               </div>
             )}

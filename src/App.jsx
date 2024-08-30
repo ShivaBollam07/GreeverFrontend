@@ -13,6 +13,7 @@
   import Logout from './Pages/Logout';
   import Profile from './Pages/Profile';
   import Settings from './Pages/Settings';
+  import CourseDetails from './Components/CourseDetails';
 
   function App() {
     const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -63,12 +64,12 @@
                 <Route path="/" element={<Navigate to="/home" />} />
                 <Route path="/home" element={<Home />} />
                 <Route path="/courses" element={<Courses />} />
+                <Route path="/courses/:id" element={<CourseDetails />} />
                 <Route path="/reads" element={<Reads />} />
                 <Route path="/about" element={<Aboutus />} />
                 <Route path="/profile" element={<Profile />} />
                 <Route path="/settings" element={<Settings />} />
                 <Route
-                  //logout if clicked remove token from local storage and navigate to login page
                   path="/signup"
                   element={<Logout onLogout={handleLogout} />}
 

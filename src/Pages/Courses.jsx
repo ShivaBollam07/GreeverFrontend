@@ -1,10 +1,12 @@
 import { useEffect, useState } from 'react';
 import './Styles/Courses.css';
+import { useNavigate } from 'react-router-dom';
 
 function Courses() {
     const [courses, setCourses] = useState([]);
     const [searchTerm, setSearchTerm] = useState('');
     const [filteredCourses, setFilteredCourses] = useState([]);
+    const navigate = useNavigate();
 
     useEffect(() => {
         const fetchCourses = async () => {
@@ -80,6 +82,9 @@ function Courses() {
                     filteredCourses.map((course) => (
                         <div className="CourseCard" key={course._id}
                         style={{ cursor: 'pointer' }}
+                        onClick={() => {
+                            navigate(`/courses/${course._id}`);
+                        }}
                         >
                             <img src={course.course_image} alt={course.course_title} />
                             <h2>{course.course_title}</h2>

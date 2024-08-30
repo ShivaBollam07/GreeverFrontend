@@ -1,7 +1,11 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import CompanyLogo from '../assets/Greever-logo.png';
 import './Styles/Signup.css';
+
+const API_BASE_URL = 'http://localhost:3000'; 
 
 const Signup = () => {
   const [email, setEmail] = useState('');
@@ -18,22 +22,22 @@ const Signup = () => {
     setError('');
     try {
       setLoading(true);
-      const response = await fetch('http://localhost:3000/app/v1/auth/signup', {
+      const response = await fetch(`${API_BASE_URL}/app/v1/auth/signup`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({ email, password }),
+        credentials: 'include',
       });
-      
+
       const data = await response.json();
-      
+
       if (data.status === 'success') {
         setShowOtpInput(true);
       } else {
         setError(data.message || 'An error occurred. Please try again.');
       }
-    // eslint-disable-next-line no-unused-vars
     } catch (error) {
       setError('An error occurred. Please try again later.');
     }
@@ -41,26 +45,29 @@ const Signup = () => {
   };
 
   const handleVerifyOtp = async (e) => {
-    setVerifyOtpLoading(true);
     e.preventDefault();
     setError('');
+    setVerifyOtpLoading(true);
     try {
-      const response = await fetch('http://localhost:3000/app/v1/auth/verify-otp', {
+      const response = await fetch(`${API_BASE_URL}/app/v1/auth/verify-otp`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({ otp }),
+        credentials: 'include',
       });
-      
+
       const data = await response.json();
-      
+
       if (data.status === 'success') {
-        navigate('/login');
+        toast.success('Account verified and created successfully!');
+        setTimeout(() => {
+          navigate('/login');
+        }, 3000);
       } else {
         setError(data.message || 'Invalid OTP. Please try again.');
       }
-    // eslint-disable-next-line no-unused-vars
     } catch (error) {
       setError('An error occurred. Please try again later.');
     }
@@ -87,9 +94,9 @@ const Signup = () => {
             onChange={(e) => setPassword(e.target.value)}
             required
           />
-            <button type="submit" disabled={loading}>
-                {loading ? 'Sending OTP...' : 'Send OTP '}
-            </button>
+          <button type="submit" disabled={loading}>
+            {loading ? 'Sending OTP...' : 'Send OTP'}
+          </button>
         </form>
       ) : (
         <form onSubmit={handleVerifyOtp}>
@@ -101,15 +108,16 @@ const Signup = () => {
             maxLength={6}
             required
           />
-            <button type="submit" disabled={verifyOtpLoading}>
-                {verifyOtpLoading ? 'Verifying OTP...' : 'Verify OTP'}
-            </button>
+          <button type="submit" disabled={verifyOtpLoading}>
+            {verifyOtpLoading ? 'Verifying OTP...' : 'Verify OTP'}
+          </button>
         </form>
       )}
       {error && <p className="error-message">{error}</p>}
       <p>
         Already have an account? <Link to="/login">Sign in</Link>
       </p>
+      <ToastContainer />
     </div>
   );
 };
